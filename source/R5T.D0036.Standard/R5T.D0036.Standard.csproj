@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\R5T.D0037\source\R5T.D0037.Standard\R5T.D0037.Standard.csproj" />
+    <ProjectReference Include="..\R5T.D0036.D0037\R5T.D0036.D0037.csproj" />
+  </ItemGroup>
+
+</Project>

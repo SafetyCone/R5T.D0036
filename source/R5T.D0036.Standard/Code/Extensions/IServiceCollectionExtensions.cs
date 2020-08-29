@@ -6,8 +6,10 @@ using R5T.D0036.D0037;
 using R5T.D0037;
 using R5T.D0037.Standard;
 using R5T.D0038;
+using R5T.D0046;
 
 using R5T.Dacia;
+using R5T.Polidea;
 
 
 namespace R5T.D0036.Standard
@@ -22,7 +24,11 @@ namespace R5T.D0036.Standard
             IServiceAction<ISourceControlOperator> Main,
             (
             IServiceAction<IGitOperator> Main,
-            IServiceAction<ILibGit2SharpOperator> libGit2SharpOperatorAction
+            IServiceAction<ILibGit2SharpOperator> libGit2SharpOperatorAction,
+            (
+            IServiceAction<IGitAuthenticationProvider> Main,
+            IServiceAction<IGitHubAuthenticationProvider> gitHubAuthenticationProviderAction
+            ) GitAuthenticationProviderAction
             ) GitOperatorAction
             )
         AddSourceControlOperatorAction(this IServiceCollection services)

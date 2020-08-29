@@ -37,6 +37,9 @@ namespace R5T.D0036.D0037
 
         public Task<bool> HasRemoteChangesNotInLocal(LocalRepositoryDirectoryPath repositoryDirectoryPath)
         {
+            // Perform a fetch first to ensure our local is actually aware of what has occurred remotely.
+            this.GitOperator.Fetch(repositoryDirectoryPath);
+
             var gettingHasRemoteChangesNotInLocal = this.GitOperator.HasUnpulledOriginMasterChanges(repositoryDirectoryPath);
             return gettingHasRemoteChangesNotInLocal;
         }

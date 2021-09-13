@@ -1,4 +1,0 @@
-R5T.D0036.Standard - Standard aggregation library for the ISourceControlOperator service - asynchronous, strongly-typed (T0010-based).
-
-Goals
-

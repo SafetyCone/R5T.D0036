@@ -17,6 +17,15 @@ namespace R5T.D0036.D0037
             this.GitOperator = gitOperator;
         }
 
+        public Task<string> Clone(
+            string sourceUrl,
+            LocalRepositoryDirectoryPath localRepositoryDirectoryPath)
+        {
+            return this.GitOperator.Clone(
+                sourceUrl,
+                localRepositoryDirectoryPath);
+        }
+
         public Task<RevisionIdentity> GetLatestLocalRepositoryRevision(LocalRepositoryContainedPath path)
         {
             var gettingLatestLocalMasterRevision = this.GitOperator.GetLatestLocalMasterRevision(path);

@@ -8,6 +8,10 @@ namespace R5T.D0036
 {
     public interface ISourceControlOperator
     {
+        Task<string> Clone(
+            string sourceUrl,
+            LocalRepositoryDirectoryPath localRepositoryDirectoryPath);
+
         /// <summary>
         /// Gets the remote repository URL for a file or directory path within a local repository.
         /// </summary>

@@ -44,13 +44,13 @@ namespace R5T.D0036.D0037
             return gettingHasUnpushedLocalChanges;
         }
 
-        public Task<bool> HasRemoteChangesNotInLocal(LocalRepositoryDirectoryPath repositoryDirectoryPath)
+        public async Task<bool> HasRemoteChangesNotInLocal(LocalRepositoryDirectoryPath repositoryDirectoryPath)
         {
             // Perform a fetch first to ensure our local is actually aware of what has occurred remotely.
-            this.GitOperator.Fetch(repositoryDirectoryPath);
+            await this.GitOperator.Fetch(repositoryDirectoryPath);
 
-            var gettingHasRemoteChangesNotInLocal = this.GitOperator.HasUnpulledOriginMasterChanges(repositoryDirectoryPath);
-            return gettingHasRemoteChangesNotInLocal;
+            var hasRemoteChangesNotInLocal = await this.GitOperator.HasUnpulledOriginMasterChanges(repositoryDirectoryPath);
+            return hasRemoteChangesNotInLocal;
         }
     }
 }

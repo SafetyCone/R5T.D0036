@@ -2,11 +2,13 @@
 using System.Threading.Tasks;
 
 using R5T.T0010;
+using R5T.T0064;
 
 
 namespace R5T.D0036
 {
-    public interface ISourceControlOperator
+    [ServiceDefinitionMarker]
+    public interface ISourceControlOperator : IServiceDefinition
     {
         Task<string> Clone(
             string sourceUrl,

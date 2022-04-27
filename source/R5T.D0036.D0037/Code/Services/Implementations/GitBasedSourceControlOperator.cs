@@ -3,11 +3,13 @@ using System.Threading.Tasks;
 
 using R5T.D0037;
 using R5T.T0010;
+using R5T.T0064;
 
 
 namespace R5T.D0036.D0037
 {
-    public class GitBasedSourceControlOperator : ISourceControlOperator
+    [ServiceImplementationMarker]
+    public class GitBasedSourceControlOperator : ISourceControlOperator, IServiceImplementation
     {
         private IGitOperator GitOperator { get; }
 

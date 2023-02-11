@@ -3,7 +3,7 @@
 using Microsoft.Extensions.DependencyInjection;
 
 using R5T.Dacia;
-using R5T.Magyar;
+using R5T.Magyar.Extensions;
 using R5T.Suebia;
 
 using R5T.D0036.D0037;
@@ -27,7 +27,7 @@ namespace R5T.D0036.A001
                 gitOperatorServices.GitOperatorAction);
 
             return new ServiceAggregation()
-                .As<ServiceAggregation, IServiceAggregationIncrement>(increment =>
+                .ModifyAs<ServiceAggregation, IServiceAggregationIncrement>(increment =>
                 {
                     increment.SourceControlOperatorAction = sourceControlOperatorAction;
                 })
